@@ -8,7 +8,7 @@ echo CANARY_VERSION to search: $3
 
 url=$1/env/VERSION
 
-echo conencting to $url
+echo conencting to "$url"
 
 target=$(curl $url)
 value=$(echo $target | grep -c "$2\|$3" )
@@ -23,10 +23,10 @@ else
       value2=$(echo $target | grep -c $2 )
       if [ "$value2" == "0" ];
       then
-         echo $3 has been found
+         echo "$3" has been found
          new_search=$2
       else
-         echo $2 has been found
+         echo "$2" has been found
          new_search=$3
       fi
 
@@ -34,14 +34,14 @@ else
       #try to find the other string now which has not been found earlier
       do
          echo connecting to $url
-         value3=$(curl $url | grep -c new_search)
-         echo count of $2 search String = $value
+         value3=$(curl $url | grep -c $new_search)
+         echo count of $new_search search String = $value3
 
          if [ "$value3" == "0" ];
             then
                echo "try $i for second search unsucessful" 
             else
-               echo second search string $new_search found
+               echo second search string "$new_search" found
                exit 0
          fi   
       done
