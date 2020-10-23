@@ -1,6 +1,6 @@
 #!/bin/sh
 # this script is to be called only when .Values.USE_CANARY is true.
-echo on
+# this script takes two arguments VERSION and CANARY_VERSION
 echo executing verify canary script
 
 echo VERSION to search : $2
