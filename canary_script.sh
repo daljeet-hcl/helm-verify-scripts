@@ -20,8 +20,8 @@ else
 # one of the search string has been found
 
       new_search=0;
-      value2 = $(echo $target | grep -c $2 )
-      if [ "$value" == "0" ];
+      value2=$(echo $target | grep -c $2 )
+      if [ "$value2" == "0" ];
       then
          echo $3 has been found
          new_search=$2
@@ -34,10 +34,10 @@ else
       #try to find the other string now which has not been found earlier
       do
          echo connecting to $url
-         value=$(curl $url | grep -c $2)
+         value3=$(curl $url | grep -c new_search)
          echo count of $2 search String = $value
 
-         if [ "$value" == "0" ];
+         if [ "$value3" == "0" ];
             then
                echo "try $i for second search unsucessful" 
             else
