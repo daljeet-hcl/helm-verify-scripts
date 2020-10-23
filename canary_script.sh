@@ -6,7 +6,7 @@ echo executing verify canary script
 echo VERSION to search : $2
 echo CANARY_VERSION to search: $3
 
-url=$1 #/env/VERSION
+url=$1/env/VERSION
 
 echo conencting to $url
 
